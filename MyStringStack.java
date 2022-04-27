@@ -6,12 +6,12 @@
  * @version 1.0
  * @since   2022-4-20
  */
- 
+
 class MyStringStack {
     /**
      * Empty constructor for the class.
      */
-    public MyStringStack() {}
+    public MyStringStack() { }
 
     /**
      * Main entry into the program.
