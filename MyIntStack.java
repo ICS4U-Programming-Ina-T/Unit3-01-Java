@@ -4,16 +4,14 @@
  *
  * @author  Ina Tolo
  * @version 1.0
- * @since   2022-4-20
+ * @since   2022-4-26
  */
 
 class MyIntStack {
     /**
-     * Empty constructor for the class
+     * Empty constructor for the class.
      */
-    public MyIntStack() {
-        
-    }
+    public MyIntStack() { }
 
     /**
      * Main entry into the program.
