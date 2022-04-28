@@ -1,8 +1,8 @@
 import java.util.Stack;
 
 /**
- * The MyStringStack program contains an empty constructor
- * the program.
+ * The MyStringStack program will perform commands
+ * used in Stack (push, pop, etc.)
  *
  * @author  Ina Tolo
  * @version 1.0
