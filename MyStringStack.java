@@ -1,24 +1,34 @@
+import java.util.Stack;
+
 /**
  * The MyStringStack program contains an empty constructor
  * the program.
  *
  * @author  Ina Tolo
  * @version 1.0
- * @since   2022-4-20
+ * @since   2022-4-26
  */
- 
-class MyStringStack {
+
+public class MyStringStack {
+    // properties
+    private Stack<String> _stack;
+
     /**
      * Empty constructor for the class.
      */
-    public MyStringStack() {}
-
+    public MyStringStack() {
+        _stack = new Stack<String>();
+    }
+    
     /**
-     * Main entry into the program.
+     * Function that adds string to top of stack.
      *
-     * @param args nothing passed in
+     * @param userString passed in
      */
-    public static void main(String[] args) {
-        // fill in code later
+    void stackPush(String userString) {
+        _stack.push(userString);
+
+        // for testing purposes only
+        System.out.println("*** " + userString + " added to the stack.");
     }
 }
