@@ -16,9 +16,13 @@ public class MyIntStack {
     /**
      * Empty constructor for the class.
      */
+<<<<<<< HEAD
     public MyIntStack() { 
         _stack = new Stack<Integer>();
     }
+=======
+    public MyIntStack() { }
+>>>>>>> ac0cfdb17d8d1132186a2694d0a35065518606e2
 
     /**
      * Function that adds integer to top of stack.
