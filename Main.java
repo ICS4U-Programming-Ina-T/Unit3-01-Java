@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 /**
  * The Main program implements an application that
- * performs standard Stack commands (push, pop, peek,
- * and search).
+ * gets input from the user, then uses an object to
+ * perform commands in a Stack.
  *
  * @author  Ina Tolo
  * @version 1.0
