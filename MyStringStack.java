@@ -9,7 +9,6 @@ import java.util.Stack;
  * @since   2022-4-26
  */
 
-<<<<<<< HEAD
 public class MyStringStack {
     // properties
     private Stack<String> _stack;
@@ -21,14 +20,6 @@ public class MyStringStack {
         _stack = new Stack<String>();
     }
     
-=======
-class MyStringStack {
-    /**
-     * Empty constructor for the class.
-     */
-    public MyStringStack() { }
-
->>>>>>> ac0cfdb17d8d1132186a2694d0a35065518606e2
     /**
      * Function that adds string to top of stack.
      *
