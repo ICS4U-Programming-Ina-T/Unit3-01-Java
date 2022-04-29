@@ -68,7 +68,7 @@ class Main {
         String userCountString = "";
         String userString = "";
         int userNumInt = 0;
-        int userCountInt = 0;
+        int userCountInt = -1;
         int elementNum = 0;
 
         while (userOption1Up != PUSH
@@ -85,7 +85,7 @@ class Main {
             // checks which of the commands to execute
             if (PUSH.equals(userOption1Up)) {
 
-                while (userCountInt <= 1) {
+                while (userCountInt < 0) {
 
                     // gets input for number of elements in the stack
                     System.out.print("How many elements "
