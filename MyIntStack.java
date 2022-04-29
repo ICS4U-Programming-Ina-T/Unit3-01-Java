@@ -22,8 +22,6 @@ public class MyIntStack {
         _stack = new Stack<Integer>();
     }
 
-    public MyIntStack() { }
-
     /**
      * Function that adds integer to the stack.
      *
