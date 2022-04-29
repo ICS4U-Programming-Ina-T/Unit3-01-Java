@@ -1,8 +1,8 @@
 import java.util.Stack;
 
 /**
- * The MyIntStack program contains an empty constructor
- * the program.
+ * The MyIntStack program will perform commands
+ * used in Stack (push, pop, etc.).
  *
  * @author  Ina Tolo
  * @version 1.0
@@ -14,24 +14,21 @@ public class MyIntStack {
     private Stack<Integer> _stack;
 
     /**
-     * Empty constructor for the class.
+     * Constructor for the class.
      */
-<<<<<<< HEAD
     public MyIntStack() { 
         _stack = new Stack<Integer>();
     }
-=======
-    public MyIntStack() { }
->>>>>>> ac0cfdb17d8d1132186a2694d0a35065518606e2
 
     /**
-     * Function that adds integer to top of stack.
+     * Function that adds integer to the stack.
      *
      * @param userNumInt passed in
      */
-    void stackPush(int userNumInt) {
-        _stack.push(userNumInt);
+    void stackPush(int userNum) {
+        _stack.push(userNum);
+
         // for testing purposes only
-        System.out.println("*** " + userNumInt + " added to the stack.");
+        System.out.println("*** " + userNum + " added to the stack.");
     }
 }
