@@ -96,7 +96,7 @@ class Main {
                         userCountInt = Integer.parseInt(userCountString);
 
                         if (userCountInt <= 0) {
-                            System.out.println("Error.");
+                            System.out.println("Not a valid choice.\n");
                             continue;
                         }
 
