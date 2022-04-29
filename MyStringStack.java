@@ -2,7 +2,7 @@ import java.util.Stack;
 
 /**
  * The MyStringStack program will perform commands
- * used in Stack (push, pop, etc.)
+ * used in Stack (push, pop, etc.).
  *
  * @author  Ina Tolo
  * @version 1.0
@@ -10,7 +10,9 @@ import java.util.Stack;
  */
 
 public class MyStringStack {
-    // properties
+    /**
+     * Stack property.
+     */
     private Stack<String> _stack;
 
     /**
@@ -19,7 +21,7 @@ public class MyStringStack {
     public MyStringStack() {
         _stack = new Stack<String>();
     }
-    
+
     /**
      * Function that adds string to top of stack.
      *

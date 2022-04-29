@@ -10,20 +10,22 @@ import java.util.Stack;
  */
 
 public class MyIntStack {
-    // properties
+    /**
+     * Stack property.
+     */
     private Stack<Integer> _stack;
 
     /**
      * Constructor for the class.
      */
-    public MyIntStack() { 
+    public MyIntStack() {
         _stack = new Stack<Integer>();
     }
 
     /**
      * Function that adds integer to the stack.
      *
-     * @param userNumInt passed in
+     * @param userNum passed in
      */
     void stackPush(int userNum) {
         _stack.push(userNum);
