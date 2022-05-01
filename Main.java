@@ -16,6 +16,11 @@ class Main {
      */
     private static final String ERROR = "Not a valid choice.\n";
     /**
+     * Constant for asking again message.
+     */
+    private static final String ASK_AGAIN = "Would you like to do something "
+        + "else to the stack? (Yes or No): ";
+    /**
      * Constant for PUSH.
      */
     private static final String PUSH = "PUSH";
@@ -39,6 +44,14 @@ class Main {
      * Constant for PUSH.
      */
     private static final String STRING = "STRING";
+    /**
+     * Constant for YES.
+     */
+    private static final String YES = "YES";
+    /**
+     * Constant for NO.
+     */
+    private static final String NO = "NO";
 
     /**
      * Empty constructor.
@@ -62,157 +75,163 @@ class Main {
         final Scanner sc = new Scanner(System.in);
         String userOption1Low = "";
         String userOption2Low = "";
+        String userOption3Low = "";
         String userNumString = "";
         String userOption1Up = "";
         String userOption2Up = "";
+        String userOption3Up = "";
         String userCountString = "";
         String userString = "";
         int userNumInt = 0;
         int userCountInt = -1;
         int elementNum = 0;
-<<<<<<< HEAD
-        
-        // gets users option for which stack to use
-        System.out.print("Which stack would you like to use? (Int or String): ");
-        userOption2Low = sc.nextLine();
 
-        userOption2Up = userOption2Low.toUpperCase();
-        
-        if (userOption2Up != INT || userOption2Up != STRING) {
+        while (userOption2Up != INT || userOption2Up != STRING) {
+            // gets users option for which stack to use
+            System.out.print("Which stack would "
+                + "you like to use? (Int or String): ");
+            userOption2Low = sc.nextLine();
 
-            while (userOption1Up != PUSH
-                || userOption1Up != POP || userOption1Up != PEEK
-                || userOption1Up != CLEAR) {
-    
-                // gets command input from user
-                System.out.print("Which command would you like "
-                    + "to execute (push, pop, search, or peek)?: ");
-                userOption1Low = sc.nextLine();
-    
-                userOption1Up = userOption1Low.toUpperCase();
-    
-                // checks which of the commands to execute
-                if (PUSH.equals(userOption1Up)) {
-    
-                    while (userCountInt < 0) {
-    
-                        // gets input for number of elements in the stack
-                        System.out.print("How many elements "
-                            + "would you like to add?: ");
-                        userCountString = sc.nextLine();
-                        System.out.println();
-    
-                        try {
-                            userCountInt = Integer.parseInt(userCountString);
-    
-                            if (userCountInt <= 0) {
-                                System.out.println("Not a valid choice.\n");
-                                continue;
-                            }
-    
-=======
+            userOption2Up = userOption2Low.toUpperCase();
 
-        while (userOption1Up != PUSH
-            || userOption1Up != POP || userOption1Up != PEEK
-            || userOption1Up != CLEAR) {
+            // checks if user entered valid stack option
+            if (INT.equals(userOption2Up) || STRING.equals(userOption2Up)) {
 
-            // gets command input from user
-            System.out.print("Which command would you like "
-                + "to execute (push, pop, search, or peek)?: ");
-            userOption1Low = sc.nextLine();
+                while (userOption1Up != PUSH
+                    || userOption1Up != POP || userOption1Up != PEEK
+                    || userOption1Up != CLEAR) {
 
-            userOption1Up = userOption1Low.toUpperCase();
+                    // gets command input from user
+                    System.out.print("Which command would you like "
+                        + "to execute (push, pop, search, or peek)?: ");
+                    userOption1Low = sc.nextLine();
 
-            // checks which of the commands to execute
-            if (PUSH.equals(userOption1Up)) {
+                    userOption1Up = userOption1Low.toUpperCase();
 
-                while (userCountInt < 0) {
+                    // checks which of the commands to execute
+                    if (PUSH.equals(userOption1Up)) {
 
-                    // gets input for number of elements in the stack
-                    System.out.print("How many elements "
-                        + "would you like to add?: ");
-                    userCountString = sc.nextLine();
+                        while (userCountInt < 0) {
 
-                    try {
-                        userCountInt = Integer.parseInt(userCountString);
+                            // gets input for number of elements in the stack
+                            System.out.print("How many elements "
+                                + "would you like to add?: ");
+                            userCountString = sc.nextLine();
 
-                        if (userCountInt <= 0) {
-                            System.out.println("Not a valid choice.\n");
-                            continue;
-                        }
+                            try {
+                                userCountInt = Integer.parseInt(
+                                    userCountString);
 
-                        while (userOption2Up != INT
-                            || userOption2Up != STRING) {
+                                if (userCountInt <= 0) {
+                                    System.out.println("Not a valid "
+                                        + "choice.\n");
+                                    continue;
+                                }
 
-                            // gets users option for which stack to use
-                            System.out.print("Which stack would you like "
-                                + "to use? (Int or String): ");
-                            userOption2Low = sc.nextLine();
+                                System.out.println();
 
-                            userOption2Up = userOption2Low.toUpperCase();
+                                // checks which stack to use
+                                if (INT.equals(userOption2Up)) {
+                                    while (elementNum != userCountInt) {
+                                        System.out.print("Enter an integer "
+                                            + "you would like to add to the "
+                                            + "stack: ");
+                                        userNumString = sc.nextLine();
 
->>>>>>> ac86a3d78d1b7d68bda1899c650b4e13b9cc8238
-                            // checks which stack to use
-                            if (INT.equals(userOption2Up)) {
-                                while (elementNum != userCountInt) {
-                                    System.out.print("Enter an integer you "
-                                        + "would like to add to the stack: ");
-                                    userNumString = sc.nextLine();
+                                        try {
+                                            userNumInt =
+                                                Integer.parseInt(userNumString);
 
-                                    try {
-                                        userNumInt =
-                                            Integer.parseInt(userNumString);
+                                            /* calls int stack class that
+                                            holds the push function*/
+                                            myIntStack.stackPush(userNumInt);
+
+                                            // increments counter
+                                            elementNum++;
+                                        } catch (IllegalArgumentException
+                                            exception) {
+                                            System.out.println(ERROR);
+                                        }
+                                    }
+                                    break;
+                                } else if (STRING.equals(userOption2Up)) {
+                                    while (elementNum != userCountInt) {
+                                        System.out.print("Enter a string "
+                                            + "you would like to add to "
+                                            + "the stack: ");
+                                        userString = sc.nextLine();
 
                                         /* calls int stack class that
                                         holds the push function*/
-                                        myIntStack.stackPush(userNumInt);
+                                        myStringStack.stackPush(userString);
 
                                         // increments counter
                                         elementNum++;
-                                    } catch (IllegalArgumentException
-                                        exception) {
-                                        System.out.println(ERROR);
                                     }
+                                    break;
                                 }
-                                break;
-
-                            } else if (STRING.equals(userOption2Up)) {
-                                while (elementNum != userCountInt) {
-                                    System.out.println();
-                                    System.out.print("Enter a string you would "
-                                        + "like to add to the stack: ");
-                                    userString = sc.nextLine();
-
-                                    /* calls int stack class that
-                                    holds the push function*/
-                                    myStringStack.stackPush(userString);
-
-                                    // increments counter
-                                    elementNum++;
-                                }
-                                break;
+                            } catch (IllegalArgumentException exception) {
+                                System.out.println(ERROR);
                             }
-                        } catch (IllegalArgumentException exception) {
-                            System.out.println(ERROR);
                         }
+
+                        /* determines what the user would like to
+                        do after previous command is finished*/
+                        while (userOption3Up != YES || userOption3Up != NO) {
+                            System.out.print(ASK_AGAIN);
+                            userOption3Low = sc.nextLine();
+
+                            userOption3Up = userOption3Low.toUpperCase();
+
+                            // determines if program continues or not
+                            if (YES.equals(userOption3Up)) {
+                                System.out.println();
+                                break;
+                            } else if (NO.equals(userOption3Up)) {
+                                System.exit(1);
+                            } else {
+                                System.out.println(ERROR);
+                            }
+                        }
+                    } else if (POP.equals(userOption1Up)) {
+                        // checks which stack to pop
+                        if (INT.equals(userOption2Up)) {
+                            myIntStack.stackPop();
+                        } else if (STRING.equals(userOption2Up)) {
+                            myStringStack.stackPop();
+                        }
+
+                        /* determines what the user would like to
+                        do after previous command is finished*/
+                        while (userOption3Up != YES || userOption3Up != NO) {
+                            System.out.print(ASK_AGAIN);
+                            userOption3Low = sc.nextLine();
+
+                            userOption3Up = userOption3Low.toUpperCase();
+
+                            // determines if program continues or not
+                            if (YES.equals(userOption3Up)) {
+                                System.out.println();
+                                break;
+                            } else if (NO.equals(userOption3Up)) {
+                                System.exit(1);
+                            } else {
+                                System.out.println(ERROR);
+                            }
+                        }
+                    } else if (PEEK.equals(userOption1Up)) {
+                        // fill in later
+                        break;
+                    } else if (CLEAR.equals(userOption1Up)) {
+                        // fill in later
+                        break;
+                    } else {
+                        System.out.println(ERROR);
                     }
-                    // break;
-                } else if (POP.equals(userOption1Up)) {
-                    myIntStack.stackPop();
-                    // fill in later
-                    break;
-                } else if (PEEK.equals(userOption1Up)) {
-                    // fill in later
-                    break;
-                } else if (CLEAR.equals(userOption1Up)) {
-                    // fill in later
-                    break;
-                } else {
-                    System.out.println(ERROR);
                 }
+            } else {
+                System.out.println(ERROR);
             }
-        } else {
-            System.out.println(ERROR);
         }
     }
 }

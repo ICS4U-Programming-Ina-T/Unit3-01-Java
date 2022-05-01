@@ -34,18 +34,27 @@ public class MyIntStack {
         System.out.println("*** " + userNum + " added to the stack.");
         System.out.println();
     }
-    
+
+    /**
+     * Function that removes integer to the stack.
+     *
+     * @return popValue to main
+     */
     int stackPop() {
+        int popValue;
+
         if (_stack.empty()) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack is empty.");
+            System.out.println();
 
-            return -1;
+            popValue = -1;
         } else {
-            int popValue = _stack.pop();
+            popValue = _stack.pop();
 
-            System.out.println("*** " + popValue + " has been removed from the stack.");
-
-            return popValue;
+            System.out.println("***" + " " + popValue
+                + " has been removed from the stack.");
+            System.out.println();
         }
-    } 
+        return popValue;
+    }
 }

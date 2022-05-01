@@ -23,7 +23,7 @@ public class MyStringStack {
     }
 
     /**
-     * Function that adds string to top of stack.
+     * Function that adds string to the stack.
      *
      * @param string passed in
      */
@@ -32,5 +32,29 @@ public class MyStringStack {
 
         // for testing purposes only
         System.out.println("*** " + string + " added to the stack.");
+        System.out.println();
+    }
+
+    /**
+     * Function that removes string from the stack.
+     *
+     * @return popValue to main
+     */
+    String stackPop() {
+        String popValue;
+
+        if (_stack.empty()) {
+            System.out.println("Stack is empty.");
+            System.out.println();
+
+            popValue = "";
+        } else {
+            popValue = _stack.pop();
+
+            System.out.println("***" + " "
+                + popValue + " has been removed from the stack.");
+            System.out.println();
+        }
+        return popValue;
     }
 }
