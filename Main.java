@@ -70,6 +70,7 @@ class Main {
         int userNumInt = 0;
         int userCountInt = -1;
         int elementNum = 0;
+<<<<<<< HEAD
         
         // gets users option for which stack to use
         System.out.print("Which stack would you like to use? (Int or String): ");
@@ -109,6 +110,48 @@ class Main {
                                 continue;
                             }
     
+=======
+
+        while (userOption1Up != PUSH
+            || userOption1Up != POP || userOption1Up != PEEK
+            || userOption1Up != CLEAR) {
+
+            // gets command input from user
+            System.out.print("Which command would you like "
+                + "to execute (push, pop, search, or peek)?: ");
+            userOption1Low = sc.nextLine();
+
+            userOption1Up = userOption1Low.toUpperCase();
+
+            // checks which of the commands to execute
+            if (PUSH.equals(userOption1Up)) {
+
+                while (userCountInt < 0) {
+
+                    // gets input for number of elements in the stack
+                    System.out.print("How many elements "
+                        + "would you like to add?: ");
+                    userCountString = sc.nextLine();
+
+                    try {
+                        userCountInt = Integer.parseInt(userCountString);
+
+                        if (userCountInt <= 0) {
+                            System.out.println("Not a valid choice.\n");
+                            continue;
+                        }
+
+                        while (userOption2Up != INT
+                            || userOption2Up != STRING) {
+
+                            // gets users option for which stack to use
+                            System.out.print("Which stack would you like "
+                                + "to use? (Int or String): ");
+                            userOption2Low = sc.nextLine();
+
+                            userOption2Up = userOption2Low.toUpperCase();
+
+>>>>>>> ac86a3d78d1b7d68bda1899c650b4e13b9cc8238
                             // checks which stack to use
                             if (INT.equals(userOption2Up)) {
                                 while (elementNum != userCountInt) {
