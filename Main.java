@@ -100,10 +100,9 @@ class Main {
                 while (userOption1Up != PUSH
                     || userOption1Up != POP || userOption1Up != PEEK
                     || userOption1Up != CLEAR) {
-
                     // gets command input from user
                     System.out.print("Which command would you like "
-                        + "to execute (push, pop, search, or peek)?: ");
+                        + "to execute (push, pop, peek, or clear)?: ");
                     userOption1Low = sc.nextLine();
 
                     userOption1Up = userOption1Low.toUpperCase();
@@ -175,6 +174,10 @@ class Main {
                             }
                         }
 
+                        // resets counter values
+                        elementNum = 0;
+                        userCountInt = -1;
+
                         /* determines what the user would like to
                         do after previous command is finished*/
                         while (userOption3Up != YES || userOption3Up != NO) {
@@ -220,11 +223,57 @@ class Main {
                             }
                         }
                     } else if (PEEK.equals(userOption1Up)) {
-                        // fill in later
-                        break;
+                        // checks which stack to peek
+                        if (INT.equals(userOption2Up)) {
+                            myIntStack.stackPeek();
+                        } else if (STRING.equals(userOption2Up)) {
+                            myStringStack.stackPeek();
+                        }
+
+                        /* determines what the user would like to
+                        do after previous command is finished*/
+                        while (userOption3Up != YES || userOption3Up != NO) {
+                            System.out.print(ASK_AGAIN);
+                            userOption3Low = sc.nextLine();
+
+                            userOption3Up = userOption3Low.toUpperCase();
+
+                            // determines if program continues or not
+                            if (YES.equals(userOption3Up)) {
+                                System.out.println();
+                                break;
+                            } else if (NO.equals(userOption3Up)) {
+                                System.exit(1);
+                            } else {
+                                System.out.println(ERROR);
+                            }
+                        }
                     } else if (CLEAR.equals(userOption1Up)) {
-                        // fill in later
-                        break;
+                        // checks which stack to clear
+                        if (INT.equals(userOption2Up)) {
+                            myIntStack.stackClear();
+                        } else if (STRING.equals(userOption2Up)) {
+                            myStringStack.stackClear();
+                        }
+
+                        /* determines what the user would like to
+                        do after previous command is finished*/
+                        while (userOption3Up != YES || userOption3Up != NO) {
+                            System.out.print(ASK_AGAIN);
+                            userOption3Low = sc.nextLine();
+
+                            userOption3Up = userOption3Low.toUpperCase();
+
+                            // determines if program continues or not
+                            if (YES.equals(userOption3Up)) {
+                                System.out.println();
+                                break;
+                            } else if (NO.equals(userOption3Up)) {
+                                System.exit(1);
+                            } else {
+                                System.out.println(ERROR);
+                            }
+                        }
                     } else {
                         System.out.println(ERROR);
                     }

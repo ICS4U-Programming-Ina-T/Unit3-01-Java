@@ -43,12 +43,14 @@ public class MyStringStack {
     String stackPop() {
         String popValue;
 
+        // checks if stack is empty
         if (_stack.empty()) {
             System.out.println("Stack is empty.");
             System.out.println();
 
             popValue = "";
         } else {
+            // removes value from top of stack
             popValue = _stack.pop();
 
             System.out.println("***" + " "
@@ -56,5 +58,41 @@ public class MyStringStack {
             System.out.println();
         }
         return popValue;
+    }
+
+    /**
+     * Function thats tell the user what is at the top of the stack.
+     *
+     * @return peekValue to main
+     */
+    String stackPeek() {
+        String peekValue;
+
+        if (_stack.empty()) {
+            System.out.println("Empty stack. Nothing to peek.");
+            System.out.println();
+
+            peekValue = "";
+        } else {
+            peekValue = _stack.peek();
+            System.out.println("**" + "* " + peekValue
+                + " is on top of the stack");
+            System.out.println();
+        }
+        return peekValue;
+    }
+
+    /**
+     * Function that removes all elements from the stack.
+     */
+    void stackClear() {
+        if (_stack.empty()) {
+            System.out.println("Stack is already empty.");
+            System.out.println();
+        } else {
+            _stack.clear();
+            System.out.println("Stack has been emptied.");
+            System.out.println();
+        }
     }
 }
