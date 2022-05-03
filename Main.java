@@ -65,7 +65,7 @@ class Main {
      * @param args nothing passed in
      */
     public static void main(String[] args) {
-        // create an empy int stack
+        // create an empty int stack
         MyIntStack myIntStack = new MyIntStack();
 
         // create an empty string stack

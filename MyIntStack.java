@@ -28,6 +28,7 @@ public class MyIntStack {
      * @param userNum passed in
      */
     void stackPush(int userNum) {
+        // adds int to stack
         _stack.push(userNum);
 
         // for testing purposes only
@@ -68,15 +69,18 @@ public class MyIntStack {
     int stackPeek() {
         int peekValue;
 
+        // checks if stack is empty
         if (_stack.empty()) {
             System.out.println("Empty stack. Nothing to peek.");
             System.out.println();
 
             peekValue = -1;
         } else {
+            // looks at top value
             peekValue = _stack.peek();
+
             System.out.println("**" + "* " + peekValue
-                + " is on top of the stack");
+                + " is on top of the stack.");
             System.out.println();
         }
         return peekValue;
@@ -86,16 +90,19 @@ public class MyIntStack {
      * Function that removes all elements from the stack.
      */
     void stackClear() {
+        // checks if stack is empty
         if (_stack.empty()) {
             System.out.println("Stack is already empty.");
             System.out.println();
         } else {
-            Stack<Integer> oldStack = new Stack<Integer>();
-            oldStack = _stack;
-            
+            // alerts user command is complete
             System.out.println("*** Stack has been emptied.");
-            System.out.println("*** Old stack = " + oldStack);
-            System.out.println("*** New stack = " + _stack.clear();
+            System.out.println("*** Old stack = " + _stack);
+
+            // empties stack
+            _stack.clear();
+
+            System.out.println("*** New stack = " + _stack);
             System.out.println();
         }
     }
